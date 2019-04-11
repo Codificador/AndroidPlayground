@@ -1,4 +1,6 @@
 package com.example.fernando.testandroidservice
 
-class Counter {
+interface Counter {
+    fun count(): Int
+    fun append()
 }
