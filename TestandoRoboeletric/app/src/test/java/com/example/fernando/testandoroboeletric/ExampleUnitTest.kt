@@ -1,5 +1,6 @@
 package com.example.fernando.testandoroboeletric
 
+import android.content.pm.ActivityInfo
 import kotlinx.android.synthetic.main.activity_main.*
 import org.junit.Test
 
@@ -16,15 +17,36 @@ class ExampleUnitTest {
     fun clickEmTextView() {
         val act = Robolectric.setupActivity(MainActivity::class.java)
         act.textview.callOnClick()
-        assertEquals(act.textview.text, "OK")
+        assertEquals("OK", act.textview.text)
     }
 
     @Test
-    fun doidClicksEmTextView() {
+    fun doisClicksEmTextView() {
         val act = Robolectric.setupActivity(MainActivity::class.java)
         act.textview.callOnClick()
         act.textview.callOnClick()
-        assertEquals(act.textview.text, "OK GOOGLE")
+        assertEquals("OK GOOGLE", act.textview.text)
+    }
+
+    @Test
+    fun tresClicksEmTextView() {
+        val act = Robolectric.setupActivity(MainActivity::class.java)
+        act.textview.callOnClick()
+        act.textview.callOnClick()
+        act.textview.callOnClick()
+        act.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        assertEquals("OK", act.textview.text)
+    }
+
+    @Test
+    fun rotacionaTela() {
+        val act = Robolectric.setupActivity(MainActivity::class.java)
+        act.textview.callOnClick()
+        assertEquals("OK", act.textview.text)
+        act.textview.callOnClick()
+        act.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        assertEquals("OK GOOGLE", act.textview.text)
     }
 
 }
