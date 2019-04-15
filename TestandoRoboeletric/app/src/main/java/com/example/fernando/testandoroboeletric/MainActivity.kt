@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         if(savedInstanceState != null) {
             typeOnclick = savedInstanceState.getInt(ONCLICK_STATE)
             text = savedInstanceState.getString(TEXT_STATE)

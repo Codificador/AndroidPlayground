@@ -8,6 +8,8 @@ import org.junit.Assert.*
 import org.junit.runner.RunWith
 import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
+import android.os.Bundle
+import org.robolectric.android.controller.ActivityController
 
 
 @RunWith(RobolectricTestRunner::class)
@@ -34,7 +36,6 @@ class ExampleUnitTest {
         act.textview.callOnClick()
         act.textview.callOnClick()
         act.textview.callOnClick()
-        act.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         assertEquals("OK", act.textview.text)
     }
@@ -45,7 +46,7 @@ class ExampleUnitTest {
         act.textview.callOnClick()
         assertEquals("OK", act.textview.text)
         act.textview.callOnClick()
-        act.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        act.recreate()
         assertEquals("OK GOOGLE", act.textview.text)
     }
 
