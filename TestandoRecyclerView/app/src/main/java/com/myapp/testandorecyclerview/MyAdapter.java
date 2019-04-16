@@ -38,6 +38,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHoler> {
         this.dataset = dataset;
     }
 
+    public void add(String value) {
+        dataset.add(value);
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MyViewHoler onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -56,4 +61,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHoler> {
     public int getItemCount() {
         return dataset.size();
     }
+
+
 }
