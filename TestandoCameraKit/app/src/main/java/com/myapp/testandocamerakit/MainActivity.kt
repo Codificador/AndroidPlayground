@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             camera.captureImage(CameraKitView.ImageCallback { cameraKitView, bytes ->
                 //TODO salvar imaagem
+
             })
 
         }
