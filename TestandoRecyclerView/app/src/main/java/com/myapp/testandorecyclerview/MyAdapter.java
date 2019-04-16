@@ -40,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHoler> {
 
     public void add(String value) {
         dataset.add(value);
-        notifyDataSetChanged();
+        notifyItemInserted(getItemCount());
     }
 
     @NonNull

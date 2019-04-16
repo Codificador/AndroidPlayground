@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     private List<String> getData() {
         List<String> ls = new ArrayList<>();
         ls.add("1");
